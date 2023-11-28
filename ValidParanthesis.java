@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class ValidParanthesis {
     public static void main(String[] args) {
-        String input = "((";
+        String input = "(([]))";
         ValidParanthesis vp = new ValidParanthesis();
         boolean result = vp.isValid(input);
         System.out.println(result);
