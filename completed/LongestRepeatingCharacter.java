@@ -1,3 +1,4 @@
+package completed;
 public class LongestRepeatingCharacter {
     public static void main(String[] args) {
         
