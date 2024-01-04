@@ -1,3 +1,4 @@
+package completed;
 import java.util.LinkedHashMap;
 
 public class LRUCacheMain {
