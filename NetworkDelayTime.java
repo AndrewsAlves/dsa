@@ -30,6 +30,7 @@ public class NetworkDelayTime {
             }
         }
 
+        int minCount = Integer.MIN_VALUE;
         while (!minDistHeap.isEmpty()) {
             int[] edge = minDistHeap.poll();
             int node = edge[1], distance = edge[0];
