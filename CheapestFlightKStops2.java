@@ -40,19 +40,25 @@ public class CheapestFlightKStops2 {
 
     public void dfs(int city, int noOfStop, int totalCost, boolean[] visited) {
 
-        noOfStop++;
-        if (noOfStop > k && city != dst) {
-            return;
-        }
-
         if (city == dst) {
             costToDest.add(totalCost);
             return;
         }
 
+        noOfStop++;
+        if (noOfStop > k && city != dst) {
+            return;
+        }
+
+        if (!costToDest.isEmpty() && totalCost >= costToDest.peek()) {
+            return;
+        }
+
         visited[city] = true;
 
-        HashMap<Integer, Integer> destHashMap = grHashMap.get(city);
+        if (!grHashMap.containsKey(city)) return;
+
+        TreeMap<Integer, Integer> destHashMap = grHashMap.get(city);
         for (int dest : destHashMap.keySet()) {
             if (dest != dst && visited[dest]) continue;
             dfs(dest, noOfStop, totalCost + destHashMap.get(dest), visited);
